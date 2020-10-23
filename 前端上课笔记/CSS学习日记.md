@@ -19,15 +19,101 @@ CSS可以提供很多属性：
 
 CSS语法规则为：选择器(属性1,属性值1;属性2,属性值2)
 
+CSS分为三种插入方式
 
+	- 行内式
+	- 内嵌式
+	- 链入式
 
-## 内联式
+具体看下面的分标签
 
-内链接式采用`style`参数，可以插入到大多数标签作为参数，如p标签
+## 行内式
+
+用得少，基本没啥用，把style插入标签就行
 
 ```html
-<div style=""></div>
-<p style=""></p>
-<a style=""></a>
+<div style="color: #0000FF; font-size:30px">
+    这是行内式
+</div>
 ```
 
+
+
+## 内嵌式
+
+内链接式采用`style`参数，需要插入`head`标签之中
+
+PS：内联式不需要额外创建文件，如果需要高度整合可以用联式
+
+```html
+<head>
+    <style type="text/css">
+        p{
+            color="green"
+        }
+    </style>
+</head>
+```
+
+## 链入式
+
+外链式需要先使用`link`标签导入，具体如下
+
+```html
+<!-- 这是HTML文档内的东西 -->
+<head>
+    <link rel="stylesheet" type="text/css" href="css文件位置">
+</head>
+```
+
+导入后需要在css文件内修改，具体如下
+
+```css
+<!-- 这是css文件内的东西 -->
+#id1{
+	color:red;
+	font-size:30px;
+}
+<!--↑这是ID选择器-->
+.class1{
+	color:green;
+	font-size:40px
+}
+<!--↑这是class选择器-->
+p{
+	color:blue;
+	font-size;
+}
+<!--↑这是标签选择器-->
+```
+
+## 选择器
+
+选择器分为三种
+
+- 标签选择器
+- 类选择器
+- ID选择器
+
+三种区别不大，标签选择器范围最大（慎重使用）,具体可以看下面
+
+```css
+<!-- 这是css文件内的东西 -->
+#id1{
+	color:red;
+	font-size:30px;
+}
+<!--↑这是ID选择器-->
+.class1{
+	color:green;
+	font-size:40px
+}
+<!--↑这是class（类）选择器-->
+p{
+	color:blue;
+	font-size;
+}
+<!--↑这是标签选择器-->
+```
+
+更多看选择器专题
